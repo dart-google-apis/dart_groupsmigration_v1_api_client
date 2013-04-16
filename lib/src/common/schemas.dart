@@ -4,13 +4,13 @@ part of groupsmigration_v1_api_client;
 class Groups {
 
   /** The kind of insert resource this is. */
-  String kind;
+  core.String kind;
 
   /** The status of the insert request. */
-  String responseCode;
+  core.String responseCode;
 
   /** Create new Groups from JSON data */
-  Groups.fromJson(Map json) {
+  Groups.fromJson(core.Map json) {
     if (json.containsKey("kind")) {
       kind = json["kind"];
     }
@@ -20,8 +20,8 @@ class Groups {
   }
 
   /** Create JSON Object for Groups */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (kind != null) {
       output["kind"] = kind;
@@ -34,7 +34,7 @@ class Groups {
   }
 
   /** Return String representation of Groups */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 

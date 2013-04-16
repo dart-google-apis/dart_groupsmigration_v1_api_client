@@ -16,14 +16,14 @@ class ArchiveResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<Groups> insert(String groupId, {String content, String contentType, Map optParams}) {
-    var completer = new Completer();
+  async.Future<Groups> insert(core.String groupId, {core.String content, core.String contentType, core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "{groupId}/archive";
     var uploadUrl = "/upload/groups/v1/groups/{groupId}/archive";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (groupId == null) paramErrors.add("groupId is required");
     if (groupId != null) urlParams["groupId"] = groupId;
     if (optParams != null) {
