@@ -4,8 +4,8 @@ part of groupsmigration_v1_api_browser;
 /** Groups Migration Api. */
 class Groupsmigration extends BrowserClient {
 
-  ArchiveResource _archive;
-  ArchiveResource get archive => _archive;
+  ArchiveResource_ _archive;
+  ArchiveResource_ get archive => _archive;
 
   /**
    * Data format for the response.
@@ -59,6 +59,6 @@ class Groupsmigration extends BrowserClient {
   Groupsmigration([oauth.OAuth2 auth]) : super(auth) {
     basePath = "/groups/v1/groups/";
     rootUrl = "https://www.googleapis.com:443/";
-    _archive = new ArchiveResource(this);
+    _archive = new ArchiveResource_(this);
   }
 }

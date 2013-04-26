@@ -1,8 +1,8 @@
 part of groupsmigration_v1_api_client;
 
-class ArchiveResource extends Resource {
+class ArchiveResource_ extends Resource {
 
-  ArchiveResource(Client client) : super(client) {
+  ArchiveResource_(Client client) : super(client) {
   }
 
   /**
@@ -35,7 +35,7 @@ class ArchiveResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
