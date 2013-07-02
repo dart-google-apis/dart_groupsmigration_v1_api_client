@@ -17,7 +17,6 @@ class ArchiveResource_ extends Resource {
    * [optParams] - Additional query parameters
    */
   async.Future<Groups> insert(core.String groupId, {core.String content, core.String contentType, core.Map optParams}) {
-    var completer = new async.Completer();
     var url = "{groupId}/archive";
     var uploadUrl = "/upload/groups/v1/groups/{groupId}/archive";
     var urlParams = new core.Map();
@@ -35,8 +34,7 @@ class ArchiveResource_ extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
-      return completer.future;
+      throw new core.ArgumentError(paramErrors.join(" / "));
     }
 
     var response;
@@ -45,10 +43,8 @@ class ArchiveResource_ extends Resource {
     } else {
       response = _client.request(url, "POST", urlParams: urlParams, queryParams: queryParams);
     }
-    response
-      .then((data) => completer.complete(new Groups.fromJson(data)))
-      .catchError((e) { completer.completeError(e); return true; });
-    return completer.future;
+    return response
+      .then((data) => new Groups.fromJson(data));
   }
 }
 
