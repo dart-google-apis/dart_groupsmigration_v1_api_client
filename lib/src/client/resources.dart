@@ -1,9 +1,11 @@
-part of groupsmigration_v1_api_client;
+part of groupsmigration_v1_api;
 
-class ArchiveResource_ extends Resource {
+class ArchiveResource_ {
 
-  ArchiveResource_(Client client) : super(client) {
-  }
+  final Client _client;
+
+  ArchiveResource_(Client client) :
+      _client = client;
 
   /**
    * Inserts a new mail into the archive of the Google group.
@@ -38,7 +40,7 @@ class ArchiveResource_ extends Resource {
     }
 
     var response;
-    if (?content && content != null) {
+    if (content != null) {
       response = _client.upload(uploadUrl, "POST", null, content, contentType, urlParams: urlParams, queryParams: queryParams);
     } else {
       response = _client.request(url, "POST", urlParams: urlParams, queryParams: queryParams);
