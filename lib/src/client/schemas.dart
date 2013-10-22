@@ -34,7 +34,7 @@ class Groups {
   }
 
   /** Return String representation of Groups */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
