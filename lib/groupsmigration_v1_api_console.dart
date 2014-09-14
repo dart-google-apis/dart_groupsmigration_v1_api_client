@@ -7,6 +7,7 @@ import 'package:google_groupsmigration_v1_api/src/console_client.dart';
 import "package:google_groupsmigration_v1_api/groupsmigration_v1_api_client.dart";
 
 /** Groups Migration Api. */
+@deprecated
 class Groupsmigration extends Client with ConsoleClient {
 
   final oauth2.OAuth2Console auth;
